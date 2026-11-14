@@ -12,4 +12,5 @@ class User(Base):
 
     jobs = relationship('Job', back_populates='owner')
 
+    files = relationship('File', back_populates='user')
 
