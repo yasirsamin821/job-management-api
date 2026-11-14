@@ -16,4 +16,16 @@ Built a basic REST API using FastAPI and PostgreSQL.
 - Error handling
 - Git and GitHub basics
 
+## Phase 2: File Uploads and Storage
+
+Extended the Job Management API with file upload and storage functionality.
+
+### What I Learned
+- File uploads using FastAPI
+- File validation (type, extension, and size)
+- UUID-based unique filenames
+- Local filesystem storage
+- Storing file metadata in PostgreSQL
+- Retrieving file information through API endpoints
+
 More phases and concepts will be added as I progress.
