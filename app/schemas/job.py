@@ -4,7 +4,6 @@ from pydantic import BaseModel, ConfigDict
 class JobCreate(BaseModel):
     title: str
     description: str | None = None
-    user_id: int
 
 
 class JobUpdate(BaseModel):
@@ -18,3 +17,4 @@ class JobResponse(BaseModel):
     user_id: int
 
     model_config = ConfigDict(from_attributes=True)
+

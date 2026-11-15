@@ -28,4 +28,18 @@ Extended the Job Management API with file upload and storage functionality.
 - Storing file metadata in PostgreSQL
 - Retrieving file information through API endpoints
 
+## Phase 3: Authentication and Security
+
+Implemented user authentication and authorization using JWT.
+
+### What I Learned
+- Password hashing using Argon2
+- Password verification
+- JWT access token generation and validation
+- OAuth2 Password Flow
+- Authentication using FastAPI dependencies
+- Protected API endpoints
+- User authorization and resource ownership
+- Securing job and file endpoints
+
 More phases and concepts will be added as I progress.

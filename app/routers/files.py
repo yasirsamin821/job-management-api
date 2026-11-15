@@ -1,4 +1,4 @@
-from fastapi import APIRouter, UploadFile, File, HTTPException, Form, Depends
+from fastapi import APIRouter, UploadFile, File, HTTPException, Depends, status
 from sqlalchemy.orm import Session
 import uuid
 from pathlib import Path
@@ -8,9 +8,8 @@ from app.database import get_db
 from app.models.user import User
 from app.models.file import File as FileModel
 from app.schemas.file import FileResponse
+from app.auth.dependencies import get_current_user
 
-MAX_FILE_SIZE = 5 * 1024 * 1024
-router = APIRouter()
 
 router = APIRouter(
     prefix="/files",
@@ -22,18 +21,19 @@ MAX_FILE_SIZE = 5 * 1024 * 1024
 ALLOWED_EXTENSIONS = {".csv"}
 ALLOWED_CONTENT_TYPES = {"text/csv"}
 
-UPLOAD_DIR = Path('uploads')
+UPLOAD_DIR = Path("uploads")
 UPLOAD_DIR.mkdir(exist_ok=True)
 
-@router.post("/upload")
-async def upload_file(file: UploadFile = File(...),
-                      user_id: int = Form(...),
-                      db: Session = Depends(get_db)
-                      ):
 
-    extension = file.filename.split(".")[-1].lower()
+@router.post("/upload", status_code=status.HTTP_201_CREATED)
+async def upload_file(
+    file: UploadFile = File(...),
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    extension = Path(file.filename).suffix.lower()
 
-    if f".{extension}" not in ALLOWED_EXTENSIONS:
+    if extension not in ALLOWED_EXTENSIONS:
         raise HTTPException(
             status_code=400,
             detail="Only CSV files are allowed"
@@ -56,27 +56,22 @@ async def upload_file(file: UploadFile = File(...),
     unique_filename = f"{uuid.uuid4()}.csv"
 
     file_path = UPLOAD_DIR / unique_filename
+
     await file.seek(0)
+
     with file_path.open("wb") as buffer:
-        user = db.query(User).filter(User.id == user_id).first()
-
-        if not user:
-            raise HTTPException(
-                status_code=404,
-                detail="User not found"
-            )
-
         shutil.copyfileobj(file.file, buffer)
-        db_file = FileModel(
-            filename = file.filename,
-            file_path = str(file_path),
-            file_size = len(contents),
-            user_id = user_id
-        )
 
-        db.add(db_file)
-        db.commit()
-        db.refresh(db_file)
+    db_file = FileModel(
+        filename=file.filename,
+        file_path=str(file_path),
+        file_size=len(contents),
+        user_id=current_user.id
+    )
+
+    db.add(db_file)
+    db.commit()
+    db.refresh(db_file)
 
     return {
         "id": db_file.id,
@@ -88,19 +83,33 @@ async def upload_file(file: UploadFile = File(...),
     }
 
 
-
-@router.get('/', response_model=list[FileResponse])
-def get_files(db: Session = Depends(get_db)):
-    files = db.query(FileModel).all()
+@router.get("/", response_model=list[FileResponse])
+def get_files(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    files = db.query(FileModel).filter(
+        FileModel.user_id == current_user.id
+    ).all()
 
     return files
 
 
 @router.get("/{file_id}", response_model=FileResponse)
-def get_file(file_id: int, db: Session = Depends(get_db)):
-    file = db.query(FileModel).filter(FileModel.id == file_id).first()
+def get_file(
+    file_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    file = db.query(FileModel).filter(
+        FileModel.id == file_id,
+        FileModel.user_id == current_user.id
+    ).first()
 
     if not file:
-        raise HTTPException(status_code=404, detail="File not found")
+        raise HTTPException(
+            status_code=404,
+            detail="File not found"
+        )
 
     return file
