@@ -2,7 +2,11 @@ from fastapi import FastAPI
 from sqlalchemy import text
 
 from app.database import engine, Base
-from app.routers import users, jobs, files, auth
+from app.routers import users, jobs, files, auth, processing_jobs
+from app.models.processing_job import ProcessingJob
+from app.models.job import Job
+from app.models.user import User
+
 app = FastAPI(title="Job Management API")
 
 Base.metadata.create_all(bind=engine)
@@ -11,6 +15,7 @@ app.include_router(users.router)
 app.include_router(jobs.router)
 app.include_router(files.router)
 app.include_router(auth.router)
+app.include_router(processing_jobs.router)
 
 print("\nFiles router endpoints:")
 

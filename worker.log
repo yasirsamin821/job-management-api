@@ -1,0 +1,59 @@
+[2026-11-19 20:04:19,581: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2026-11-19 20:04:19,582: INFO/MainProcess] mingle: searching for neighbors
+[2026-11-19 20:04:20,597: INFO/MainProcess] mingle: all alone
+[2026-11-19 20:04:20,600: CRITICAL/MainProcess] Unrecoverable error: ResourceLocked(405, "RESOURCE_LOCKED - cannot obtain exclusive access to locked queue 'celery@r821.celery.pidbox' in vhost '/'. It could be originally declared on another connection or the exclusive property value does not match that of the original declaration.", (50, 10), 'Queue.declare')
+Traceback (most recent call last):
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/celery/worker/worker.py", line 271, in start
+    self.blueprint.start(self)
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/celery/bootsteps.py", line 365, in start
+    return self.obj.start()
+           ^^^^^^^^^^^^^^^^
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/celery/worker/consumer/consumer.py", line 406, in start
+    blueprint.start(self)
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/celery/worker/pidbox.py", line 53, in start
+    self.consumer = self.node.listen(callback=self.on_message)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/kombu/pidbox.py", line 98, in listen
+    consumer = self.Consumer(channel=channel,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/kombu/pidbox.py", line 78, in Consumer
+    return Consumer(
+           ^^^^^^^^^
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/kombu/messaging.py", line 583, in __init__
+    self.revive(self.channel)
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/kombu/messaging.py", line 607, in revive
+    self.declare()
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/kombu/messaging.py", line 625, in declare
+    queue.declare()
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/kombu/entity.py", line 618, in declare
+    self._create_queue(nowait=nowait, channel=channel)
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/kombu/entity.py", line 627, in _create_queue
+    self.queue_declare(nowait=nowait, passive=False, channel=channel)
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/kombu/entity.py", line 656, in queue_declare
+    ret = channel.queue_declare(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/amqp/channel.py", line 1163, in queue_declare
+    return queue_declare_ok_t(*self.wait(
+                               ^^^^^^^^^^
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/amqp/abstract_channel.py", line 102, in wait
+    conn.drain_events(timeout=timeout)
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/amqp/connection.py", line 529, in drain_events
+    while not self.blocking_read(timeout):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/amqp/connection.py", line 535, in blocking_read
+    return self.on_inbound_frame(frame)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/amqp/method_framing.py", line 54, in on_frame
+    callback(channel, method_sig, buf, None)
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/amqp/connection.py", line 541, in on_inbound_method
+    return self.channels[channel_id].dispatch_method(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/amqp/abstract_channel.py", line 159, in dispatch_method
+    listener(*args)
+  File "/home/samin96/code_folders/job-management-api/venv/lib/python3.11/site-packages/amqp/channel.py", line 294, in _on_close
+    raise error_for_code(
+amqp.exceptions.ResourceLocked: Queue.declare: (405) RESOURCE_LOCKED - cannot obtain exclusive access to locked queue 'celery@r821.celery.pidbox' in vhost '/'. It could be originally declared on another connection or the exclusive property value does not match that of the original declaration.

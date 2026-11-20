@@ -5,11 +5,13 @@ from pathlib import Path
 import shutil
 
 from app.database import get_db
+from app.models import processing_job
 from app.models.user import User
 from app.models.file import File as FileModel
 from app.schemas.file import FileResponse
 from app.auth.dependencies import get_current_user
-
+from app.tasks.csv_tasks import process_csv
+from app.models.processing_job import ProcessingJob
 
 router = APIRouter(
     prefix="/files",
@@ -73,13 +75,31 @@ async def upload_file(
     db.commit()
     db.refresh(db_file)
 
+    task_id = str(uuid.uuid4())
+
+    processing_job = ProcessingJob(
+        task_id=task_id,
+        file_id=db_file.id,
+        status='PENDING'
+    )
+    db.add(processing_job)
+    db.commit()
+    db.refresh(processing_job)
+
+    process_csv.apply_async(
+        args=[str(file_path)],
+        task_id=task_id,
+    )
+
     return {
-        "id": db_file.id,
+        "id__": db_file.id,
         "filename": db_file.filename,
         "file_path": db_file.file_path,
         "file_size": db_file.file_size,
         "user_id": db_file.user_id,
-        "message": "File uploaded successfully"
+        "message": "File uploaded and preprocessing started",
+        'task_id': task_id,
+        'preprocessing_job_id': processing_job.id
     }
 
 
