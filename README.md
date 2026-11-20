@@ -42,4 +42,57 @@ Implemented user authentication and authorization using JWT.
 - User authorization and resource ownership
 - Securing job and file endpoints
 
+## Phase 4: Background Processing and Message Queues
+
+Integrated RabbitMQ and Celery to process CSV files asynchronously using background workers.
+
+### What I Learned
+
+**RabbitMQ**
+- Message broker architecture
+- Exchanges, queues, bindings, and routing keys
+- Direct exchanges and message routing
+- Producers and consumers using Pika
+- Message acknowledgements (ACK/NACK)
+- Publisher confirms and mandatory publishing
+- Durable queues and persistent messages
+- Dead Letter Exchanges (DLX) and Dead Letter Queues (DLQ)
+- Message TTL (Time-To-Live)
+- Consumer prefetch and queue monitoring
+
+**Celery**
+- Celery configuration and RabbitMQ integration
+- Background task creation and execution
+- Independent workers and concurrency
+- Task lifecycle and acknowledgements
+- Task status tracking and result storage
+- Automatic retries and retry limits
+- Exponential backoff and jitter
+- Idempotency and duplicate task execution
+- Task revocation
+- Periodic tasks using Celery Beat
+- Task chains, groups, and chords
+- Worker monitoring, time limits, and graceful shutdown
+
+**Application Integration and Reliability**
+- Asynchronous CSV processing
+- Connecting file uploads to background tasks
+- Processing job tracking using PostgreSQL
+- User-specific processing job access
+- Retrieving processing results through API endpoints
+- Testing multiple simultaneous jobs
+- Failure and recovery testing
+- Understanding message redelivery and delivery guarantees
+
+### Technologies Used
+- Python
+- FastAPI
+- PostgreSQL
+- SQLAlchemy
+- RabbitMQ
+- Celery
+- Pika
+- JWT
+- Git and GitHub
+
 More phases and concepts will be added as I progress.
