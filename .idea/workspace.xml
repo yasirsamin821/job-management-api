@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7eec0364-47c9-40bd-b2fa-114d9a5cdbbb" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.000000000000003" />
+      <entry key="S30" value="1.0000927693947743" />
+      <entry key="S60" value="1.040100603282316" />
+      <entry key="M2" value="1.9192506921258807" />
+      <entry key="M5" value="9.017307014807859" />
+      <entry key="M10" value="23.663514518453553" />
+      <entry key="M15" value="37.12270968295717" />
+      <entry key="M30" value="68.66432888873226" />
+      <entry key="H1" value="118.70703892764097" />
+      <entry key="H2" value="223.48926898052716" />
+      <entry key="H4" value="466.02790552640874" />
+      <entry key="D1" value="1439.902785800247" />
+      <entry key="W1" value="1845.348715108673" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="6.443950266253859E-187" />
+      <entry key="S5" value="3.9642534090177553E-75" />
+      <entry key="S10" value="9.303362693701465E-38" />
+      <entry key="S30" value="9.06610698217739E-13" />
+      <entry key="S60" value="1.6570547492111247E-6" />
+      <entry key="M2" value="0.0023823563495208393" />
+      <entry key="M5" value="0.2222746703126774" />
+      <entry key="M10" value="1.1133084698327698" />
+      <entry key="M15" value="1.9610974184720131" />
+      <entry key="M30" value="3.678292504638498" />
+      <entry key="H1" value="6.009480893498176" />
+      <entry key="H2" value="13.093118952139776" />
+      <entry key="H4" value="35.512930257346845" />
+      <entry key="D1" value="138.13035653481813" />
+      <entry key="W1" value="182.19600527225236" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.8414593090697405E-16" />
+      <entry key="MS500" value="7.129062552024032E-4" />
+      <entry key="S2" value="0.16340227783848107" />
+      <entry key="S5" value="0.4845105549929888" />
+      <entry key="S10" value="0.6960679241230651" />
+      <entry key="S30" value="0.8863311117931247" />
+      <entry key="S60" value="0.9815024655670597" />
+      <entry key="M2" value="1.8918425742198874" />
+      <entry key="M5" value="9.226539929330558" />
+      <entry key="M10" value="24.768303233049764" />
+      <entry key="M15" value="39.07682087597742" />
+      <entry key="M30" value="72.33764202852412" />
+      <entry key="H1" value="124.7125670570703" />
+      <entry key="H2" value="236.57671276775073" />
+      <entry key="H4" value="501.5308436484701" />
+      <entry key="D1" value="1578.0258537992722" />
+      <entry key="W1" value="2027.5433387676267" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Ly53quexNmnrYNwi6sWXCpqjvE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/samin96/Downloads/intellij-discord-rp-1.10.1-signed.zip&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/labs" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="job-management-api" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="RUN_AS_SCRIPT" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-9e1d95ea72ba-e0583fc556d1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-263.7307.329" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7eec0364-47c9-40bd-b2fa-114d9a5cdbbb" name="Changes" comment="" />
+      <created>1794413270407</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1794413270407</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/files.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/routers/jobs.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
